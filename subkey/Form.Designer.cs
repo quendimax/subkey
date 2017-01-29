@@ -66,6 +66,8 @@
             this.Controls.Add(this.tableLayout);
             this.Name = "Form";
             this.Text = "subkey";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
+            this.Load += new System.EventHandler(this.Form_Load);
             this.ResumeLayout(false);
 
         }

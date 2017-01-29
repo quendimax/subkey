@@ -6,7 +6,7 @@
       <Value Profile="(Default)">70, 40</Value>
     </Setting>
     <Setting Name="WindowSize" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">290, 240</Value>
+      <Value Profile="(Default)">707, 306</Value>
     </Setting>
   </Settings>
 </SettingsFile>

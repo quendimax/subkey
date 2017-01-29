@@ -16,9 +16,20 @@ namespace subkey
         public Form()
         {
             InitializeComponent();
+            TopMost = true;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams param = base.CreateParams;
+                param.ExStyle |= 0x08000000;
+                return param;
+            }
+        }
+
+        private void Form_Load(object sender, EventArgs e)
         {
             if (Settings.Default.WindowLocation != null)
             {
@@ -30,7 +41,7 @@ namespace subkey
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
