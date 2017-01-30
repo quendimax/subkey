@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using subkey.Properties;
 
 namespace subkey
@@ -20,11 +21,12 @@ namespace subkey
         public Form()
         {
             InitializeComponent();
-            initFonts();
+            InitFonts();
+            LoadKeyboardScheme();
             TopMost = true;
         }
 
-        private Button buildButton(string text, string toolTipText)
+        private Button BuildButton(string text, string toolTipText)
         {
             var button = new Button();
             button.Text = text;
@@ -35,7 +37,43 @@ namespace subkey
             return button;
         }
 
-        private void initFonts()
+        private void LoadKeyboardScheme()
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(Resources.Keyboard);
+            foreach (XmlNode scheme in xml.DocumentElement.ChildNodes)
+            {
+                string schemeName = scheme.Attributes["name"].Value;
+                foreach (XmlNode key in scheme.ChildNodes)
+                {
+                    string text = "";
+                    string title = "";
+                    string tooltip = "";
+                    XmlNode node = key.FirstChild;
+                    do
+                    {
+                        switch (node.Name)
+                        {
+                            case "text":
+                                text = node.InnerText;
+                                if (title.Length == 0) title = text;
+                                break;
+                            case "tooltip":
+                                tooltip = node.InnerText;
+                                break;
+                            case "title":
+                                title = node.InnerText;
+                                break;
+                        }
+                        node = node.NextSibling;
+                    }
+                    while (node != null);
+                    tableLayout.Controls.Add(BuildButton(text, tooltip));
+                }
+            }
+        }
+
+        private void InitFonts()
         {
             var fontData = Resources.RomanCyrillic_Std;
             IntPtr buf = Marshal.AllocCoTaskMem(fontData.Length);

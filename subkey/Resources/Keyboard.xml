@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<keyboard>
+    <scheme name="Cyrillic">
+        <key>
+            <text>є</text>
+            <tooltip>hello</tooltip>
+            <filter></filter>
+        </key>
+    </scheme>
+    <scheme name="Cyrillic 2">
+        <key>
+            <text>ґ</text>
+            <tooltip>hello 2</tooltip>
+            <filter> </filter>
+        </key>
+    </scheme>
+</keyboard>

@@ -61,6 +61,31 @@ namespace subkey.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;keyboard&gt;
+        ///    &lt;scheme name=&quot;Cyrillic&quot;&gt;
+        ///        &lt;key&gt;
+        ///            &lt;text&gt;є&lt;/text&gt;
+        ///            &lt;tooltip&gt;hello&lt;/tooltip&gt;
+        ///            &lt;filter&gt;&lt;/filter&gt;
+        ///        &lt;/key&gt;
+        ///    &lt;/scheme&gt;
+        ///    &lt;scheme name=&quot;Cyrillic 2&quot;&gt;
+        ///        &lt;key&gt;
+        ///            &lt;text&gt;ґ&lt;/text&gt;
+        ///            &lt;tooltip&gt;hello 2&lt;/tooltip&gt;
+        ///            &lt;filter&gt; &lt;/filter&gt;
+        ///        &lt;/key&gt;
+        ///    &lt;/scheme&gt;
+        ///&lt;/keyboard&gt;.
+        /// </summary>
+        internal static string Keyboard {
+            get {
+                return ResourceManager.GetString("Keyboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] RomanCyrillic_Std {
