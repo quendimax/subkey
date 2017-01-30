@@ -19,17 +19,21 @@ namespace subkey
         [DllImport("gdi32.dll", ExactSpelling = true)]
         private static extern IntPtr AddFontMemResourceEx(byte[] pbFont, int cbFont, IntPtr pdv, out uint pcFonts);
 
+        private const float DefaultFontSize = 16f;
+        private const string DefaultFontFamily = "RomanCyrillic Std";
+
         private PrivateFontCollection fontCollection = new PrivateFontCollection();
         private Dictionary<string, Font> fontMap = new Dictionary<string, Font>();
         private Dictionary<string, FontFamily> fontFamilyMap = new Dictionary<string, FontFamily>();
-        private const float DefaultFontSize = 16f;
+        private Dictionary<string, List<Button>> schemes = new Dictionary<string, List<Button>>();
 
         public Form()
         {
             InitializeComponent();
             LoadFonts();
-            LoadKeyboardScheme();
+            LoadKeyboardSchemes();
             TopMost = true;
+            Button[] buttons = new Button[3];
         }
 
         private Button BuildButton(string text, string toolTipText, string fontFamily, float fontSize)
@@ -55,19 +59,26 @@ namespace subkey
             SendKeys.Send(c);
         }
 
-        private void LoadKeyboardScheme()
+        private void LoadKeyboardSchemes()
         {
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(Resources.Keyboard);
             foreach (XmlNode scheme in xml.DocumentElement.ChildNodes)
             {
                 string schemeName = scheme.Attributes["name"].Value;
+                if (schemes.ContainsKey(schemeName))
+                {
+                    MessageBox.Show(String.Format("The '{0}' scheme has already added. It is a duplicate.", schemeName),
+                                    "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
+                }
+                schemes[schemeName] = new List<Button>();
                 foreach (XmlNode key in scheme.ChildNodes)
                 {
                     string text = "";
                     string title = "";
                     string tooltip = "";
-                    string fontFamily = "RomanCyrillic Std";
+                    string fontFamily = DefaultFontFamily;
                     float fontSize = DefaultFontSize;
                     XmlNode node = key.FirstChild;
                     do
@@ -91,9 +102,8 @@ namespace subkey
                                 break;
                         }
                         node = node.NextSibling;
-                    }
-                    while (node != null);
-                    tableLayout.Controls.Add(BuildButton(text, tooltip, fontFamily, fontSize));
+                    } while (node != null);
+                    schemes[schemeName].Add(BuildButton(text, tooltip, fontFamily, fontSize));
                 }
             }
         }

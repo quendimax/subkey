@@ -5,7 +5,7 @@
             <text>є</text>
             <tooltip>hello</tooltip>
             <filter></filter>
-            <font>RomanCyrillic Std</font>
+            <font>Arial</font>
         </key>
     </scheme>
     <scheme name="Cyrillic 2">
