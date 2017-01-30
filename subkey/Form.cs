@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using System.Xml;
 using subkey.Properties;
 
@@ -32,7 +33,7 @@ namespace subkey
             InitializeComponent();
             LoadFonts();
             LoadKeyboardSchemes();
-            TopMost = true;
+            InitializeMenu();
             Button[] buttons = new Button[3];
         }
 
@@ -106,6 +107,20 @@ namespace subkey
                     schemes[schemeName].Add(BuildButton(text, tooltip, fontFamily, fontSize));
                 }
             }
+        }
+
+        private void InitializeMenu()
+        {
+            schemeComboBox.Items.AddRange(schemes.Keys.ToArray());
+            schemeComboBox.SelectedIndex = 0;
+        }
+
+        private void SchemeComboBox_SelectedIndexChanged(Object sender, EventArgs e)
+        {
+            ToolStripComboBox comboBox = (ToolStripComboBox)sender;
+            string schemeName = comboBox.Text;
+            tableLayout.Controls.Clear();
+            tableLayout.Controls.AddRange(schemes[schemeName].ToArray());
         }
 
         Font getFont(string familyName, float size)

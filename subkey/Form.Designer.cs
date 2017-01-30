@@ -30,7 +30,7 @@
         {
             this.tableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.charsetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.schemeComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,18 +64,19 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.charsetToolStripMenuItem});
+            this.schemeComboBox});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(691, 24);
+            this.menuStrip.Size = new System.Drawing.Size(691, 27);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip";
             // 
-            // charsetToolStripMenuItem
+            // schemeComboBox
             // 
-            this.charsetToolStripMenuItem.Name = "charsetToolStripMenuItem";
-            this.charsetToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.charsetToolStripMenuItem.Text = "Charset";
+            this.schemeComboBox.Name = "schemeComboBox";
+            this.schemeComboBox.Size = new System.Drawing.Size(121, 23);
+            this.schemeComboBox.ToolTipText = "Choose needed character set";
+            this.schemeComboBox.SelectedIndexChanged += new System.EventHandler(this.SchemeComboBox_SelectedIndexChanged);
             // 
             // Form
             // 
@@ -88,6 +89,7 @@
             this.MinimumSize = new System.Drawing.Size(240, 120);
             this.Name = "Form";
             this.Text = "subkey";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
             this.menuStrip.ResumeLayout(false);
@@ -101,7 +103,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayout;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem charsetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox schemeComboBox;
     }
 }
 
