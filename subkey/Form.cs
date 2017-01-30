@@ -20,21 +20,24 @@ namespace subkey
         private static extern IntPtr AddFontMemResourceEx(byte[] pbFont, int cbFont, IntPtr pdv, out uint pcFonts);
 
         private PrivateFontCollection fontCollection = new PrivateFontCollection();
+        private Dictionary<string, Font> fontMap = new Dictionary<string, Font>();
+        private Dictionary<string, FontFamily> fontFamilyMap = new Dictionary<string, FontFamily>();
+        private const float DefaultFontSize = 16f;
 
         public Form()
         {
             InitializeComponent();
-            InitFonts();
+            LoadFonts();
             LoadKeyboardScheme();
             TopMost = true;
         }
 
-        private Button BuildButton(string text, string toolTipText)
+        private Button BuildButton(string text, string toolTipText, string fontFamily, float fontSize)
         {
             var button = new Button();
             button.Text = text.ToUpper();
             button.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
-            button.Font = new Font("RomanCyrillic_Std", 16F, FontStyle.Bold);
+            button.Font = getFont(fontFamily, fontSize);
             button.Click += Button_Click;
             var toolTip = new ToolTip();
             toolTip.SetToolTip(button, toolTipText);
@@ -64,10 +67,12 @@ namespace subkey
                     string text = "";
                     string title = "";
                     string tooltip = "";
+                    string fontFamily = "RomanCyrillic Std";
+                    float fontSize = DefaultFontSize;
                     XmlNode node = key.FirstChild;
                     do
                     {
-                        switch (node.Name)
+                        switch (node.Name.ToLower())
                         {
                             case "text":
                                 text = node.InnerText;
@@ -79,16 +84,35 @@ namespace subkey
                             case "title":
                                 title = node.InnerText;
                                 break;
+                            case "font":
+                                fontFamily = node.InnerText;
+                                if (node.Attributes["size"] != null)
+                                    fontSize = (float)Double.Parse(node.Attributes["size"].Value);
+                                break;
                         }
                         node = node.NextSibling;
                     }
                     while (node != null);
-                    tableLayout.Controls.Add(BuildButton(text, tooltip));
+                    tableLayout.Controls.Add(BuildButton(text, tooltip, fontFamily, fontSize));
                 }
             }
         }
 
-        private void InitFonts()
+        Font getFont(string familyName, float size)
+        {
+            Font font;
+            string hash = String.Format("<{0}, {1}>", familyName, size);
+            if (fontMap.ContainsKey(hash))
+                return fontMap[hash];
+            if (fontFamilyMap.ContainsKey(familyName))
+                font = new Font(fontFamilyMap[familyName], size, FontStyle.Bold);
+            else
+                font = new Font(familyName, size, FontStyle.Bold);
+            fontMap[hash] = font;
+            return font;
+        }
+
+        private void LoadFonts()
         {
             uint dummy;
             byte[] fontData = (byte[])Resources.RomanCyrillic_Std.Clone();
@@ -101,6 +125,10 @@ namespace subkey
                 fontCollection.AddMemoryFont(buf, fontData.Length);
                 Marshal.FreeCoTaskMem(buf);
             }
+            string fontName = "RomanCyrillic Std";
+            fontFamilyMap["RomanCyrillic Std"] = fontCollection.Families[0];
+            Font font = new Font(fontCollection.Families[0], DefaultFontSize, FontStyle.Bold);
+            fontMap[String.Format("<{0}, {1}>", fontName, DefaultFontSize)] = font;
         }
 
         protected override CreateParams CreateParams

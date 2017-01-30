@@ -5,6 +5,7 @@
             <text>є</text>
             <tooltip>hello</tooltip>
             <filter></filter>
+            <font>RomanCyrillic Std</font>
         </key>
     </scheme>
     <scheme name="Cyrillic 2">
@@ -12,6 +13,7 @@
             <text>ґ</text>
             <tooltip>hello 2</tooltip>
             <filter> </filter>
+            <font size="10">RomanCyrillic Std</font>
         </key>
     </scheme>
 </keyboard>
