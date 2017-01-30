@@ -16,6 +16,9 @@ namespace subkey
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        [DllImport("gdi32.dll", ExactSpelling = true)]
+        private static extern IntPtr AddFontMemResourceEx(byte[] pbFont, int cbFont, IntPtr pdv, out uint pcFonts);
+
         private PrivateFontCollection fontCollection = new PrivateFontCollection();
 
         public Form()
@@ -29,12 +32,24 @@ namespace subkey
         private Button BuildButton(string text, string toolTipText)
         {
             var button = new Button();
-            button.Text = text;
+            button.Text = text.ToUpper();
             button.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
-            button.Font = new Font(fontCollection.Families[0], 16F, FontStyle.Bold);
+            button.Font = new Font("RomanCyrillic_Std", 16F, FontStyle.Bold);
+            button.Click += Button_Click;
             var toolTip = new ToolTip();
             toolTip.SetToolTip(button, toolTipText);
             return button;
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string c = button.Text;
+            bool isBig = Control.IsKeyLocked(Keys.CapsLock) && !(Control.ModifierKeys == Keys.Shift) ||
+                        !Control.IsKeyLocked(Keys.CapsLock) && Control.ModifierKeys == Keys.Shift;
+            if (!isBig) c = c.ToLower();
+            else c = c.ToUpper();
+            SendKeys.Send(c);
         }
 
         private void LoadKeyboardScheme()
@@ -75,11 +90,17 @@ namespace subkey
 
         private void InitFonts()
         {
-            var fontData = Resources.RomanCyrillic_Std;
+            uint dummy;
+            byte[] fontData = (byte[])Resources.RomanCyrillic_Std.Clone();
+            AddFontMemResourceEx(fontData, fontData.Length, IntPtr.Zero, out dummy);
+
             IntPtr buf = Marshal.AllocCoTaskMem(fontData.Length);
-            Marshal.Copy(fontData, 0, buf, fontData.Length);
-            fontCollection.AddMemoryFont(buf, fontData.Length);
-            Marshal.FreeCoTaskMem(buf);
+            if (buf != null)
+            {
+                Marshal.Copy(fontData, 0, buf, fontData.Length);
+                fontCollection.AddMemoryFont(buf, fontData.Length);
+                Marshal.FreeCoTaskMem(buf);
+            }
         }
 
         protected override CreateParams CreateParams
