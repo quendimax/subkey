@@ -2,11 +2,6 @@
 <keyboard>
 	<scheme name="Cyrillic_Ext_A">
 		<key>
-			<text>A</text>
-			<title>B</title>
-			<tooltip>COMBINING CYRILLIC LETTER BE</tooltip>
-		</key>
-		<key>
 			<text>&#x2DE0;</text>
 			<title> &#x2DE0;</title>
 			<tooltip>COMBINING CYRILLIC LETTER BE</tooltip>
@@ -328,20 +323,24 @@
 			<tooltip>CYRILLIC LETTER MULTIOCULAR O</tooltip>
 		</key>
 		<key>
-			<text>&#xA66F;</text>
-			<tooltip>COMBINING CYRILLIC VZMET</tooltip>
+            <text>&#xA66F;</text>
+            <title>◌&#xA66F;</title>
+            <tooltip>COMBINING CYRILLIC VZMET</tooltip>
 		</key>
 		<key>
 			<text>&#xA670;</text>
-			<tooltip>COMBINING CYRILLIC TEN MILLIONS SIGN</tooltip>
+            <title> ◌&#xA670;</title>
+            <tooltip>COMBINING CYRILLIC TEN MILLIONS SIGN</tooltip>
 		</key>
 		<key>
-			<text>&#xA671;</text>
-			<tooltip>COMBINING CYRILLIC HUNDRED MILLIONS SIGN</tooltip>
+            <text>&#xA671;</text>
+            <title> ◌&#xA671;</title>
+            <tooltip>COMBINING CYRILLIC HUNDRED MILLIONS SIGN</tooltip>
 		</key>
 		<key>
-			<text>&#xA672;</text>
-			<tooltip>COMBINING CYRILLIC THOUSAND MILLIONS SIGN</tooltip>
+            <text>&#xA672;</text>
+            <title> ◌&#xA672;</title>
+            <tooltip>COMBINING CYRILLIC THOUSAND MILLIONS SIGN</tooltip>
 		</key>
 		<key>
 			<text>&#xA673;</text>
@@ -516,12 +515,14 @@
 			<tooltip>MODIFIER LETTER CYRILLIC SOFT SIGN</tooltip>
 		</key>
 		<key>
-			<text>&#xA69E;</text>
-			<tooltip>COMBINING CYRILLIC LETTER EF</tooltip>
+            <text>&#xA69E;</text>
+            <title>◌&#xA69E;</title>
+            <tooltip>COMBINING CYRILLIC LETTER EF</tooltip>
 		</key>
 		<key>
-			<text>&#xA69F;</text>
-			<tooltip>COMBINING CYRILLIC LETTER IOTIFIED E</tooltip>
+            <text>&#xA69F;</text>
+            <title>◌&#xA69F;</title>
+            <tooltip>COMBINING CYRILLIC LETTER IOTIFIED E</tooltip>
 		</key>
 	</scheme>
 	<scheme name="Cyrillic_Ext_C">

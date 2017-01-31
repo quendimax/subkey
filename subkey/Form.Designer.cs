@@ -31,6 +31,8 @@
             this.tableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.schemeComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.backButton = new System.Windows.Forms.ToolStripButton();
+            this.nextButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.schemeComboBox});
+            this.schemeComboBox, this.backButton, this.nextButton});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(691, 27);
@@ -77,6 +79,20 @@
             this.schemeComboBox.Size = new System.Drawing.Size(121, 23);
             this.schemeComboBox.ToolTipText = "Choose needed character set";
             this.schemeComboBox.SelectedIndexChanged += new System.EventHandler(this.SchemeComboBox_SelectedIndexChanged);
+            //
+            // backButton
+            //
+            this.backButton.Name = "backButton";
+            this.backButton.Text = "<";
+            this.backButton.Enabled = false;
+            this.backButton.Click += new System.EventHandler(this.OffsetIndexButton_Click);
+            //
+            // nextButton
+            //
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Text = ">";
+            this.nextButton.Enabled = false;
+            this.nextButton.Click += new System.EventHandler(this.OffsetIndexButton_Click);
             // 
             // Form
             // 
@@ -104,6 +120,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayout;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripComboBox schemeComboBox;
+        private System.Windows.Forms.ToolStripButton backButton;
+        private System.Windows.Forms.ToolStripButton nextButton;
     }
 }
 

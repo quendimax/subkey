@@ -32,7 +32,7 @@ namespace subkey
         private Dictionary<string, Font> fontMap = new Dictionary<string, Font>();
         private Dictionary<string, FontFamily> fontFamilyMap = new Dictionary<string, FontFamily>();
         private Dictionary<string, List<SubkeyButton>> schemes = new Dictionary<string, List<SubkeyButton>>();
-        private Dictionary<string, int> schemeOffsets = new Dictionary<string, int>();
+        private Dictionary<string, int> schemeOffsetIndeces = new Dictionary<string, int>();
 
         public Form()
         {
@@ -50,6 +50,7 @@ namespace subkey
             button.RealText = text;
             button.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             button.Font = getFont(fontFamily, fontSize);
+            button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             button.Click += Button_Click;
             var toolTip = new ToolTip();
             toolTip.SetToolTip(button, toolTipText);
@@ -81,7 +82,7 @@ namespace subkey
                     continue;
                 }
                 schemes[schemeName] = new List<SubkeyButton>();
-                schemeOffsets[schemeName] = 0;
+                schemeOffsetIndeces[schemeName] = 0;
                 foreach (XmlNode key in scheme.ChildNodes)
                 {
                     string text = "";
@@ -128,14 +129,43 @@ namespace subkey
         private void SchemeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ToolStripComboBox comboBox = (ToolStripComboBox)sender;
-            tableLayout.Controls.Clear();
-            string schemeName = comboBox.Text;
+            UpdateTableLayout(comboBox.Text);
+        }
+
+        private void OffsetIndexButton_Click(object sender, EventArgs e)
+        {
+            var button = (ToolStripButton)sender;
+            string schemeName = schemeComboBox.Text;
+            if (button == backButton)
+                --schemeOffsetIndeces[schemeName];
+            else if (button == nextButton)
+                ++schemeOffsetIndeces[schemeName];
+            UpdateTableLayout(schemeName);
+        }
+
+        private void UpdateTableLayout(string schemeName)
+        {
             var scheme = schemes[schemeName];
-            int offset = schemeOffsets[schemeName];
+            int offsetIndex = schemeOffsetIndeces[schemeName];
             int tableSize = tableLayout.ColumnCount * tableLayout.RowCount;
-            int count = scheme.Count - offset * tableSize;
-            if (count < 0) count = 0;
+            int offset = offsetIndex * tableSize;
+            int count = scheme.Count - offset;
+            if (count > tableSize)
+                count = tableSize;
+
+            tableLayout.SuspendLayout();
+            tableLayout.Controls.Clear();
             tableLayout.Controls.AddRange(scheme.GetRange(offset, count).ToArray());
+            tableLayout.ResumeLayout();
+
+            if (offset != 0)
+                backButton.Enabled = true;
+            else
+                backButton.Enabled = false;
+            if (offset + count == scheme.Count)
+                nextButton.Enabled = false;
+            else
+                nextButton.Enabled = true;
         }
 
         Font getFont(string familyName, float size)
