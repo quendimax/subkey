@@ -15,18 +15,24 @@ using subkey.Properties;
 
 namespace subkey
 {
+    public class SubkeyButton : Button
+    {
+        public string RealText { get; set; }
+    }
+
     public partial class Form : System.Windows.Forms.Form
     {
         [DllImport("gdi32.dll", ExactSpelling = true)]
         private static extern IntPtr AddFontMemResourceEx(byte[] pbFont, int cbFont, IntPtr pdv, out uint pcFonts);
 
-        private const float DefaultFontSize = 16f;
+        private const float DefaultFontSize = 14f;
         private const string DefaultFontFamily = "RomanCyrillic Std";
 
         private PrivateFontCollection fontCollection = new PrivateFontCollection();
         private Dictionary<string, Font> fontMap = new Dictionary<string, Font>();
         private Dictionary<string, FontFamily> fontFamilyMap = new Dictionary<string, FontFamily>();
-        private Dictionary<string, List<Button>> schemes = new Dictionary<string, List<Button>>();
+        private Dictionary<string, List<SubkeyButton>> schemes = new Dictionary<string, List<SubkeyButton>>();
+        private Dictionary<string, int> schemeOffsets = new Dictionary<string, int>();
 
         public Form()
         {
@@ -34,13 +40,14 @@ namespace subkey
             LoadFonts();
             LoadKeyboardSchemes();
             InitializeMenu();
-            Button[] buttons = new Button[3];
+            SubkeyButton[] buttons = new SubkeyButton[3];
         }
 
-        private Button BuildButton(string text, string toolTipText, string fontFamily, float fontSize)
+        private SubkeyButton BuildButton(string text, string title, string toolTipText, string fontFamily, float fontSize)
         {
-            var button = new Button();
-            button.Text = text.ToUpper();
+            var button = new SubkeyButton();
+            button.Text = title;
+            button.RealText = text;
             button.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             button.Font = getFont(fontFamily, fontSize);
             button.Click += Button_Click;
@@ -51,8 +58,8 @@ namespace subkey
 
         private void Button_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            string c = button.Text;
+            SubkeyButton button = (SubkeyButton)sender;
+            string c = button.RealText;
             bool isBig = Control.IsKeyLocked(Keys.CapsLock) && !(Control.ModifierKeys == Keys.Shift) ||
                         !Control.IsKeyLocked(Keys.CapsLock) && Control.ModifierKeys == Keys.Shift;
             if (!isBig) c = c.ToLower();
@@ -73,7 +80,8 @@ namespace subkey
                                     "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     continue;
                 }
-                schemes[schemeName] = new List<Button>();
+                schemes[schemeName] = new List<SubkeyButton>();
+                schemeOffsets[schemeName] = 0;
                 foreach (XmlNode key in scheme.ChildNodes)
                 {
                     string text = "";
@@ -104,7 +112,9 @@ namespace subkey
                         }
                         node = node.NextSibling;
                     } while (node != null);
-                    schemes[schemeName].Add(BuildButton(text, tooltip, fontFamily, fontSize));
+                    int size = text.Length;
+                    size = title.Length;
+                    schemes[schemeName].Add(BuildButton(text, title, tooltip, fontFamily, fontSize));
                 }
             }
         }
@@ -112,15 +122,20 @@ namespace subkey
         private void InitializeMenu()
         {
             schemeComboBox.Items.AddRange(schemes.Keys.ToArray());
-            schemeComboBox.SelectedIndex = 0;
+            schemeComboBox.SelectedIndex = Settings.Default.SchemeIndex;
         }
 
-        private void SchemeComboBox_SelectedIndexChanged(Object sender, EventArgs e)
+        private void SchemeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             ToolStripComboBox comboBox = (ToolStripComboBox)sender;
-            string schemeName = comboBox.Text;
             tableLayout.Controls.Clear();
-            tableLayout.Controls.AddRange(schemes[schemeName].ToArray());
+            string schemeName = comboBox.Text;
+            var scheme = schemes[schemeName];
+            int offset = schemeOffsets[schemeName];
+            int tableSize = tableLayout.ColumnCount * tableLayout.RowCount;
+            int count = scheme.Count - offset * tableSize;
+            if (count < 0) count = 0;
+            tableLayout.Controls.AddRange(scheme.GetRange(offset, count).ToArray());
         }
 
         Font getFont(string familyName, float size)
@@ -130,9 +145,9 @@ namespace subkey
             if (fontMap.ContainsKey(hash))
                 return fontMap[hash];
             if (fontFamilyMap.ContainsKey(familyName))
-                font = new Font(fontFamilyMap[familyName], size, FontStyle.Bold);
+                font = new Font(fontFamilyMap[familyName], size, FontStyle.Regular);
             else
-                font = new Font(familyName, size, FontStyle.Bold);
+                font = new Font(familyName, size, FontStyle.Regular);
             fontMap[hash] = font;
             return font;
         }
@@ -152,7 +167,7 @@ namespace subkey
             }
             string fontName = "RomanCyrillic Std";
             fontFamilyMap["RomanCyrillic Std"] = fontCollection.Families[0];
-            Font font = new Font(fontCollection.Families[0], DefaultFontSize, FontStyle.Bold);
+            Font font = new Font(fontCollection.Families[0], DefaultFontSize, FontStyle.Regular);
             fontMap[String.Format("<{0}, {1}>", fontName, DefaultFontSize)] = font;
         }
 
@@ -190,6 +205,7 @@ namespace subkey
                 Settings.Default.WindowSize = this.RestoreBounds.Size;
                 Settings.Default.WindowLocation = this.RestoreBounds.Location;
             }
+            Settings.Default.SchemeIndex = schemeComboBox.SelectedIndex;
             Settings.Default.Save();
         }
     }

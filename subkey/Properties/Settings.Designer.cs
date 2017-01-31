@@ -46,5 +46,17 @@ namespace subkey.Properties {
                 this["WindowSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SchemeIndex {
+            get {
+                return ((int)(this["SchemeIndex"]));
+            }
+            set {
+                this["SchemeIndex"] = value;
+            }
+        }
     }
 }

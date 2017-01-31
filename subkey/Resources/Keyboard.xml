@@ -1,5 +1,567 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <keyboard>
+	<scheme name="Cyrillic_Ext_A">
+		<key>
+			<text>A</text>
+			<title>B</title>
+			<tooltip>COMBINING CYRILLIC LETTER BE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE0;</text>
+			<title> &#x2DE0;</title>
+			<tooltip>COMBINING CYRILLIC LETTER BE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE1;</text>
+			<title> &#x2DE1;</title>
+			<tooltip>COMBINING CYRILLIC LETTER VE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE2;</text>
+			<title> &#x2DE2;</title>
+			<tooltip>COMBINING CYRILLIC LETTER GHE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE3;</text>
+			<tooltip>COMBINING CYRILLIC LETTER DE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE4;</text>
+			<tooltip>COMBINING CYRILLIC LETTER ZHE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE5;</text>
+			<tooltip>COMBINING CYRILLIC LETTER ZE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE6;</text>
+			<tooltip>COMBINING CYRILLIC LETTER KA</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE7;</text>
+			<tooltip>COMBINING CYRILLIC LETTER EL</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE8;</text>
+			<tooltip>COMBINING CYRILLIC LETTER EM</tooltip>
+		</key>
+		<key>
+			<text>&#x2DE9;</text>
+			<tooltip>COMBINING CYRILLIC LETTER EN</tooltip>
+		</key>
+		<key>
+			<text>&#x2DEA;</text>
+			<tooltip>COMBINING CYRILLIC LETTER O</tooltip>
+		</key>
+		<key>
+			<text>&#x2DEB;</text>
+			<tooltip>COMBINING CYRILLIC LETTER PE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DEC;</text>
+			<tooltip>COMBINING CYRILLIC LETTER ER</tooltip>
+		</key>
+		<key>
+			<text>&#x2DED;</text>
+			<tooltip>COMBINING CYRILLIC LETTER ES</tooltip>
+		</key>
+		<key>
+			<text>&#x2DEE;</text>
+			<tooltip>COMBINING CYRILLIC LETTER TE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DEF;</text>
+			<tooltip>COMBINING CYRILLIC LETTER HA</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF0;</text>
+			<tooltip>COMBINING CYRILLIC LETTER TSE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF1;</text>
+			<tooltip>COMBINING CYRILLIC LETTER CHE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF2;</text>
+			<tooltip>COMBINING CYRILLIC LETTER SHA</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF3;</text>
+			<tooltip>COMBINING CYRILLIC LETTER SHCHA</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF4;</text>
+			<tooltip>COMBINING CYRILLIC LETTER FITA</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF5;</text>
+			<tooltip>COMBINING CYRILLIC LETTER ES-TE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF6;</text>
+			<tooltip>COMBINING CYRILLIC LETTER A</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF7;</text>
+			<tooltip>COMBINING CYRILLIC LETTER IE</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF8;</text>
+			<tooltip>COMBINING CYRILLIC LETTER DJERV</tooltip>
+		</key>
+		<key>
+			<text>&#x2DF9;</text>
+			<tooltip>COMBINING CYRILLIC LETTER MONOGRAPH UK</tooltip>
+		</key>
+		<key>
+			<text>&#x2DFA;</text>
+			<tooltip>COMBINING CYRILLIC LETTER YAT</tooltip>
+		</key>
+		<key>
+			<text>&#x2DFB;</text>
+			<tooltip>COMBINING CYRILLIC LETTER YU</tooltip>
+		</key>
+		<key>
+			<text>&#x2DFC;</text>
+			<tooltip>COMBINING CYRILLIC LETTER IOTIFIED A</tooltip>
+		</key>
+		<key>
+			<text>&#x2DFD;</text>
+			<tooltip>COMBINING CYRILLIC LETTER LITTLE YUS</tooltip>
+		</key>
+		<key>
+			<text>&#x2DFE;</text>
+			<tooltip>COMBINING CYRILLIC LETTER BIG YUS</tooltip>
+		</key>
+		<key>
+			<text>&#x2DFF;</text>
+			<tooltip>COMBINING CYRILLIC LETTER IOTIFIED BIG YUS</tooltip>
+		</key>
+	</scheme>
+	<scheme name="Cyrillic_Ext_B">
+		<key>
+			<text>&#xA640;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER ZEMLYA</tooltip>
+		</key>
+		<key>
+			<text>&#xA641;</text>
+			<tooltip>CYRILLIC SMALL LETTER ZEMLYA</tooltip>
+		</key>
+		<key>
+			<text>&#xA642;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER DZELO</tooltip>
+		</key>
+		<key>
+			<text>&#xA643;</text>
+			<tooltip>CYRILLIC SMALL LETTER DZELO</tooltip>
+		</key>
+		<key>
+			<text>&#xA644;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER REVERSED DZE</tooltip>
+		</key>
+		<key>
+			<text>&#xA645;</text>
+			<tooltip>CYRILLIC SMALL LETTER REVERSED DZE</tooltip>
+		</key>
+		<key>
+			<text>&#xA646;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER IOTA</tooltip>
+		</key>
+		<key>
+			<text>&#xA647;</text>
+			<tooltip>CYRILLIC SMALL LETTER IOTA</tooltip>
+		</key>
+		<key>
+			<text>&#xA648;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER DJERV</tooltip>
+		</key>
+		<key>
+			<text>&#xA649;</text>
+			<tooltip>CYRILLIC SMALL LETTER DJERV</tooltip>
+		</key>
+		<key>
+			<text>&#xA64A;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER MONOGRAPH UK</tooltip>
+		</key>
+		<key>
+			<text>&#xA64B;</text>
+			<tooltip>CYRILLIC SMALL LETTER MONOGRAPH UK</tooltip>
+		</key>
+		<key>
+			<text>&#xA64C;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER BROAD OMEGA</tooltip>
+		</key>
+		<key>
+			<text>&#xA64D;</text>
+			<tooltip>CYRILLIC SMALL LETTER BROAD OMEGA</tooltip>
+		</key>
+		<key>
+			<text>&#xA64E;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER NEUTRAL YER</tooltip>
+		</key>
+		<key>
+			<text>&#xA64F;</text>
+			<tooltip>CYRILLIC SMALL LETTER NEUTRAL YER</tooltip>
+		</key>
+		<key>
+			<text>&#xA650;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER YERU WITH BACK YER</tooltip>
+		</key>
+		<key>
+			<text>&#xA651;</text>
+			<tooltip>CYRILLIC SMALL LETTER YERU WITH BACK YER</tooltip>
+		</key>
+		<key>
+			<text>&#xA652;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER IOTIFIED YAT</tooltip>
+		</key>
+		<key>
+			<text>&#xA653;</text>
+			<tooltip>CYRILLIC SMALL LETTER IOTIFIED YAT</tooltip>
+		</key>
+		<key>
+			<text>&#xA654;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER REVERSED YU</tooltip>
+		</key>
+		<key>
+			<text>&#xA655;</text>
+			<tooltip>CYRILLIC SMALL LETTER REVERSED YU</tooltip>
+		</key>
+		<key>
+			<text>&#xA656;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER IOTIFIED A</tooltip>
+		</key>
+		<key>
+			<text>&#xA657;</text>
+			<tooltip>CYRILLIC SMALL LETTER IOTIFIED A</tooltip>
+		</key>
+		<key>
+			<text>&#xA658;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER CLOSED LITTLE YUS</tooltip>
+		</key>
+		<key>
+			<text>&#xA659;</text>
+			<tooltip>CYRILLIC SMALL LETTER CLOSED LITTLE YUS</tooltip>
+		</key>
+		<key>
+			<text>&#xA65A;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER BLENDED YUS</tooltip>
+		</key>
+		<key>
+			<text>&#xA65B;</text>
+			<tooltip>CYRILLIC SMALL LETTER BLENDED YUS</tooltip>
+		</key>
+		<key>
+			<text>&#xA65C;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER IOTIFIED CLOSED LITTLE YUS</tooltip>
+		</key>
+		<key>
+			<text>&#xA65D;</text>
+			<tooltip>CYRILLIC SMALL LETTER IOTIFIED CLOSED LITTLE YUS</tooltip>
+		</key>
+		<key>
+			<text>&#xA65E;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER YN</tooltip>
+		</key>
+		<key>
+			<text>&#xA65F;</text>
+			<tooltip>CYRILLIC SMALL LETTER YN</tooltip>
+		</key>
+		<key>
+			<text>&#xA660;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER REVERSED TSE</tooltip>
+		</key>
+		<key>
+			<text>&#xA661;</text>
+			<tooltip>CYRILLIC SMALL LETTER REVERSED TSE</tooltip>
+		</key>
+		<key>
+			<text>&#xA662;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER SOFT DE</tooltip>
+		</key>
+		<key>
+			<text>&#xA663;</text>
+			<tooltip>CYRILLIC SMALL LETTER SOFT DE</tooltip>
+		</key>
+		<key>
+			<text>&#xA664;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER SOFT EL</tooltip>
+		</key>
+		<key>
+			<text>&#xA665;</text>
+			<tooltip>CYRILLIC SMALL LETTER SOFT EL</tooltip>
+		</key>
+		<key>
+			<text>&#xA666;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER SOFT EM</tooltip>
+		</key>
+		<key>
+			<text>&#xA667;</text>
+			<tooltip>CYRILLIC SMALL LETTER SOFT EM</tooltip>
+		</key>
+		<key>
+			<text>&#xA668;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER MONOCULAR O</tooltip>
+		</key>
+		<key>
+			<text>&#xA669;</text>
+			<tooltip>CYRILLIC SMALL LETTER MONOCULAR O</tooltip>
+		</key>
+		<key>
+			<text>&#xA66A;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER BINOCULAR O</tooltip>
+		</key>
+		<key>
+			<text>&#xA66B;</text>
+			<tooltip>CYRILLIC SMALL LETTER BINOCULAR O</tooltip>
+		</key>
+		<key>
+			<text>&#xA66C;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER DOUBLE MONOCULAR O</tooltip>
+		</key>
+		<key>
+			<text>&#xA66D;</text>
+			<tooltip>CYRILLIC SMALL LETTER DOUBLE MONOCULAR O</tooltip>
+		</key>
+		<key>
+			<text>&#xA66E;</text>
+			<tooltip>CYRILLIC LETTER MULTIOCULAR O</tooltip>
+		</key>
+		<key>
+			<text>&#xA66F;</text>
+			<tooltip>COMBINING CYRILLIC VZMET</tooltip>
+		</key>
+		<key>
+			<text>&#xA670;</text>
+			<tooltip>COMBINING CYRILLIC TEN MILLIONS SIGN</tooltip>
+		</key>
+		<key>
+			<text>&#xA671;</text>
+			<tooltip>COMBINING CYRILLIC HUNDRED MILLIONS SIGN</tooltip>
+		</key>
+		<key>
+			<text>&#xA672;</text>
+			<tooltip>COMBINING CYRILLIC THOUSAND MILLIONS SIGN</tooltip>
+		</key>
+		<key>
+			<text>&#xA673;</text>
+			<tooltip>SLAVONIC ASTERISK</tooltip>
+		</key>
+		<key>
+			<text>&#xA674;</text>
+			<tooltip>COMBINING CYRILLIC LETTER UKRAINIAN IE</tooltip>
+		</key>
+		<key>
+			<text>&#xA675;</text>
+			<tooltip>COMBINING CYRILLIC LETTER I</tooltip>
+		</key>
+		<key>
+			<text>&#xA676;</text>
+			<tooltip>COMBINING CYRILLIC LETTER YI</tooltip>
+		</key>
+		<key>
+			<text>&#xA677;</text>
+			<tooltip>COMBINING CYRILLIC LETTER U</tooltip>
+		</key>
+		<key>
+			<text>&#xA678;</text>
+			<tooltip>COMBINING CYRILLIC LETTER HARD SIGN</tooltip>
+		</key>
+		<key>
+			<text>&#xA679;</text>
+			<tooltip>COMBINING CYRILLIC LETTER YERU</tooltip>
+		</key>
+		<key>
+			<text>&#xA67A;</text>
+			<tooltip>COMBINING CYRILLIC LETTER SOFT SIGN</tooltip>
+		</key>
+		<key>
+			<text>&#xA67B;</text>
+			<tooltip>COMBINING CYRILLIC LETTER OMEGA</tooltip>
+		</key>
+		<key>
+			<text>&#xA67C;</text>
+			<tooltip>COMBINING CYRILLIC KAVYKA</tooltip>
+		</key>
+		<key>
+			<text>&#xA67D;</text>
+			<tooltip>COMBINING CYRILLIC PAYEROK</tooltip>
+		</key>
+		<key>
+			<text>&#xA67E;</text>
+			<tooltip>CYRILLIC KAVYKA</tooltip>
+		</key>
+		<key>
+			<text>&#xA67F;</text>
+			<tooltip>CYRILLIC PAYEROK</tooltip>
+		</key>
+		<key>
+			<text>&#xA680;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER DWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA681;</text>
+			<tooltip>CYRILLIC SMALL LETTER DWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA682;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER DZWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA683;</text>
+			<tooltip>CYRILLIC SMALL LETTER DZWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA684;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER ZHWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA685;</text>
+			<tooltip>CYRILLIC SMALL LETTER ZHWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA686;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER CCHE</tooltip>
+		</key>
+		<key>
+			<text>&#xA687;</text>
+			<tooltip>CYRILLIC SMALL LETTER CCHE</tooltip>
+		</key>
+		<key>
+			<text>&#xA688;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER DZZE</tooltip>
+		</key>
+		<key>
+			<text>&#xA689;</text>
+			<tooltip>CYRILLIC SMALL LETTER DZZE</tooltip>
+		</key>
+		<key>
+			<text>&#xA68A;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER TE WITH MIDDLE HOOK</tooltip>
+		</key>
+		<key>
+			<text>&#xA68B;</text>
+			<tooltip>CYRILLIC SMALL LETTER TE WITH MIDDLE HOOK</tooltip>
+		</key>
+		<key>
+			<text>&#xA68C;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER TWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA68D;</text>
+			<tooltip>CYRILLIC SMALL LETTER TWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA68E;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER TSWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA68F;</text>
+			<tooltip>CYRILLIC SMALL LETTER TSWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA690;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER TSSE</tooltip>
+		</key>
+		<key>
+			<text>&#xA691;</text>
+			<tooltip>CYRILLIC SMALL LETTER TSSE</tooltip>
+		</key>
+		<key>
+			<text>&#xA692;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER TCHE</tooltip>
+		</key>
+		<key>
+			<text>&#xA693;</text>
+			<tooltip>CYRILLIC SMALL LETTER TCHE</tooltip>
+		</key>
+		<key>
+			<text>&#xA694;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER HWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA695;</text>
+			<tooltip>CYRILLIC SMALL LETTER HWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA696;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER SHWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA697;</text>
+			<tooltip>CYRILLIC SMALL LETTER SHWE</tooltip>
+		</key>
+		<key>
+			<text>&#xA698;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER DOUBLE O</tooltip>
+		</key>
+		<key>
+			<text>&#xA699;</text>
+			<tooltip>CYRILLIC SMALL LETTER DOUBLE O</tooltip>
+		</key>
+		<key>
+			<text>&#xA69A;</text>
+			<tooltip>CYRILLIC CAPITAL LETTER CROSSED O</tooltip>
+		</key>
+		<key>
+			<text>&#xA69B;</text>
+			<tooltip>CYRILLIC SMALL LETTER CROSSED O</tooltip>
+		</key>
+		<key>
+			<text>&#xA69C;</text>
+			<tooltip>MODIFIER LETTER CYRILLIC HARD SIGN</tooltip>
+		</key>
+		<key>
+			<text>&#xA69D;</text>
+			<tooltip>MODIFIER LETTER CYRILLIC SOFT SIGN</tooltip>
+		</key>
+		<key>
+			<text>&#xA69E;</text>
+			<tooltip>COMBINING CYRILLIC LETTER EF</tooltip>
+		</key>
+		<key>
+			<text>&#xA69F;</text>
+			<tooltip>COMBINING CYRILLIC LETTER IOTIFIED E</tooltip>
+		</key>
+	</scheme>
+	<scheme name="Cyrillic_Ext_C">
+		<key>
+			<text>&#x1C80;</text>
+			<tooltip>CYRILLIC SMALL LETTER ROUNDED VE</tooltip>
+		</key>
+		<key>
+			<text>&#x1C81;</text>
+			<tooltip>CYRILLIC SMALL LETTER LONG-LEGGED DE</tooltip>
+		</key>
+		<key>
+			<text>&#x1C82;</text>
+			<tooltip>CYRILLIC SMALL LETTER NARROW O</tooltip>
+		</key>
+		<key>
+			<text>&#x1C83;</text>
+			<tooltip>CYRILLIC SMALL LETTER WIDE ES</tooltip>
+		</key>
+		<key>
+			<text>&#x1C84;</text>
+			<tooltip>CYRILLIC SMALL LETTER TALL TE</tooltip>
+		</key>
+		<key>
+			<text>&#x1C85;</text>
+			<tooltip>CYRILLIC SMALL LETTER THREE-LEGGED TE</tooltip>
+		</key>
+		<key>
+			<text>&#x1C86;</text>
+			<tooltip>CYRILLIC SMALL LETTER TALL HARD SIGN</tooltip>
+		</key>
+		<key>
+			<text>&#x1C87;</text>
+			<tooltip>CYRILLIC SMALL LETTER TALL YAT</tooltip>
+		</key>
+		<key>
+			<text>&#x1C88;</text>
+			<tooltip>CYRILLIC SMALL LETTER UNBLENDED UK</tooltip>
+		</key>
+	</scheme>
     <scheme name="Cyrillic">
         <key>
             <text>є</text>
