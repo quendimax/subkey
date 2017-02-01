@@ -66,7 +66,9 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.schemeComboBox, this.backButton, this.nextButton});
+            this.schemeComboBox,
+            this.backButton,
+            this.nextButton});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(691, 27);
@@ -79,19 +81,23 @@
             this.schemeComboBox.Size = new System.Drawing.Size(121, 23);
             this.schemeComboBox.ToolTipText = "Choose needed character set";
             this.schemeComboBox.SelectedIndexChanged += new System.EventHandler(this.SchemeComboBox_SelectedIndexChanged);
-            //
+            // 
             // backButton
-            //
-            this.backButton.Name = "backButton";
-            this.backButton.Text = "<";
+            // 
             this.backButton.Enabled = false;
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(23, 20);
+            this.backButton.Text = "<";
+            this.backButton.ToolTipText = "To the previous  part of keyboard scheme";
             this.backButton.Click += new System.EventHandler(this.OffsetIndexButton_Click);
-            //
+            // 
             // nextButton
-            //
-            this.nextButton.Name = "nextButton";
-            this.nextButton.Text = ">";
+            // 
             this.nextButton.Enabled = false;
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(23, 20);
+            this.nextButton.Text = ">";
+            this.nextButton.ToolTipText = "To the next part of keyboard scheme";
             this.nextButton.Click += new System.EventHandler(this.OffsetIndexButton_Click);
             // 
             // Form

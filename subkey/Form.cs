@@ -48,6 +48,7 @@ namespace subkey
             button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             button.Click += Button_Click;
             var toolTip = new ToolTip();
+            toolTip.ShowAlways = true;
             toolTip.SetToolTip(button, key.Tooltip);
             var contextMenu = new ContextMenu();
             contextMenu.MenuItems.Add("Add to Favorites");
@@ -58,7 +59,7 @@ namespace subkey
 
         private void Button_ContextMenuClick(object sender, EventArgs e)
         {
-            MessageBox.Show("hello");
+            MessageBox.Show("Not implemented.");
         }
 
         private void Button_Click(object sender, EventArgs e)
@@ -137,7 +138,16 @@ namespace subkey
         private void InitializeMenu()
         {
             schemeComboBox.Items.AddRange(schemes.Keys.ToArray());
-            schemeComboBox.SelectedIndex = Settings.Default.SchemeIndex;
+            if (Settings.Default.SchemeIndex < schemeComboBox.Items.Count)
+            {
+                schemeComboBox.SelectedIndex = Settings.Default.SchemeIndex;
+            }
+            else
+            {
+                Settings.Default.SchemeIndex = 0;
+                if (Settings.Default.SchemeIndex < schemeComboBox.Items.Count)
+                    schemeComboBox.SelectedIndex = Settings.Default.SchemeIndex;
+            }
         }
 
         private void SchemeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -198,21 +208,40 @@ namespace subkey
 
         private void LoadFonts()
         {
-            uint dummy;
-            byte[] fontData = (byte[])Resources.RomanCyrillic_Std.Clone();
-            AddFontMemResourceEx(fontData, fontData.Length, IntPtr.Zero, out dummy);
-
-            IntPtr buf = Marshal.AllocCoTaskMem(fontData.Length);
-            if (buf != null)
             {
-                Marshal.Copy(fontData, 0, buf, fontData.Length);
-                fontCollection.AddMemoryFont(buf, fontData.Length);
-                Marshal.FreeCoTaskMem(buf);
+                uint dummy;
+                byte[] fontData = (byte[])Resources.RomanCyrillic_Std.Clone();
+                AddFontMemResourceEx(fontData, fontData.Length, IntPtr.Zero, out dummy);
+
+                IntPtr buf = Marshal.AllocCoTaskMem(fontData.Length);
+                if (buf != null)
+                {
+                    Marshal.Copy(fontData, 0, buf, fontData.Length);
+                    fontCollection.AddMemoryFont(buf, fontData.Length);
+                    Marshal.FreeCoTaskMem(buf);
+                }
+                string fontName = "RomanCyrillic Std";
+                fontFamilyMap[fontName] = fontCollection.Families[0];
+                Font font = new Font(fontCollection.Families[0], DefaultFontSize, FontStyle.Regular);
+                fontMap[String.Format("<{0}, {1}>", fontName, DefaultFontSize)] = font;
             }
-            string fontName = "RomanCyrillic Std";
-            fontFamilyMap["RomanCyrillic Std"] = fontCollection.Families[0];
-            Font font = new Font(fontCollection.Families[0], DefaultFontSize, FontStyle.Regular);
-            fontMap[String.Format("<{0}, {1}>", fontName, DefaultFontSize)] = font;
+            {
+                uint dummy;
+                byte[] fontData = (byte[])Resources.BukyVede_Regular.Clone();
+                AddFontMemResourceEx(fontData, fontData.Length, IntPtr.Zero, out dummy);
+
+                IntPtr buf = Marshal.AllocCoTaskMem(fontData.Length);
+                if (buf != null)
+                {
+                    Marshal.Copy(fontData, 0, buf, fontData.Length);
+                    fontCollection.AddMemoryFont(buf, fontData.Length);
+                    Marshal.FreeCoTaskMem(buf);
+                }
+                string fontName = "BukyVede";
+                fontFamilyMap[fontName] = fontCollection.Families[0];
+                Font font = new Font(fontCollection.Families[0], DefaultFontSize, FontStyle.Regular);
+                fontMap[String.Format("<{0}, {1}>", fontName, DefaultFontSize)] = font;
+            }
         }
 
         protected override CreateParams CreateParams
