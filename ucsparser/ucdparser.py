@@ -1,6 +1,10 @@
+import os
 import sys
+import urllib.request
+import xml.sax
+
 from xml.sax.handler import ContentHandler
-from xml.sax import parse
+from zipfile import ZipFile
 
 
 class Handler(ContentHandler):
@@ -70,5 +74,18 @@ class Handler(ContentHandler):
 
 
 if __name__ == '__main__':
-    handler = Handler('test.xml')
-    parse("ucd.all.grouped.xml", handler)
+    handler = Handler('Keyboard.xml')
+    ucd_zip_file = 'ucd.all.grouped.zip'
+    if not os.path.exists(ucd_zip_file):
+        print('Downloading {}...'.format(ucd_zip_file), flush=True)
+        urllib.request.urlretrieve("http://unicode.org/Public/9.0.0/ucdxml/{}".format(ucd_zip_file), ucd_zip_file)
+        print(' Done', flush=True)
+    ucd_file = 'ucd.all.grouped.xml'
+    if not os.path.exists(ucd_file):
+        print('Extracting {} from {}...'.format(ucd_file, ucd_zip_file), flush=True)
+        with ZipFile(ucd_zip_file) as zip_fd:
+            zip_fd.extract(ucd_file)
+        print(' Done', flush=True)
+    print('Processing {}...'.format(ucd_file), flush=True)
+    xml.sax.parse("ucd.all.grouped.xml", handler)
+    print(' Done', flush=True)
