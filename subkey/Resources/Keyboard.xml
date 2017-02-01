@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<keyboard fontfamily="RomanCyrillic Std" fontsize="15">
-    <scheme name="Hist gramatyka" fontfamily="RomanCyrillic Std" fontsize="15">
+<keyboard fontfamily="RomanCyrillic Std" fontsize="16">
+    <scheme name="Hist gramatyka" fontfamily="RomanCyrillic Std" fontsize="16">
         <key>
             <text>Є</text>
             <tooltip>CYRILLIC CAPITAL LETTER UKRAINIAN IE</tooltip>
@@ -119,18 +119,22 @@
         </key>
         <key>
             <text>l̥</text>
+            <title> l̥ </title>
             <tooltip>Складаўтваральная літара L</tooltip>
         </key>
         <key>
             <text>r̥</text>
+            <title> r̥ </title>
             <tooltip>Складаўтваральная літара R</tooltip>
         </key>
         <key>
             <text>i̯</text>
+            <title> i̯ </title>
             <tooltip>Нескладовая літара І</tooltip>
         </key>
         <key>
             <text>u̯</text>
+            <title> u̯ </title>
             <tooltip>Нескладовая літара U</tooltip>
         </key>
         <key>
@@ -177,12 +181,12 @@
         </key>
         <key>
             <text>҈</text>
-            <title>◌҈</title>
+            <title> ◌҈</title>
             <tooltip>COMBINING CYRILLIC HUNDRED THOUSANDS SIGN</tooltip>
         </key>
         <key>
             <text>҉</text>
-            <title>◌҉</title>
+            <title> ◌҉</title>
             <tooltip>COMBINING CYRILLIC MILLIONS SIGN</tooltip>
         </key>
         <key>
@@ -192,17 +196,17 @@
         </key>
         <key>
             <text>꙰</text>
-            <title>◌꙰</title>
+            <title> ◌꙰</title>
             <tooltip>COMBINING CYRILLIC TEN MILLIONS SIGN</tooltip>
         </key>
         <key>
             <text>꙱</text>
-            <title>◌꙱</title>
+            <title> ◌꙱</title>
             <tooltip>COMBINING CYRILLIC HUNDRED MILLIONS SIGN</tooltip>
         </key>
         <key>
             <text>꙲</text>
-            <title>◌꙲</title>
+            <title> ◌꙲</title>
             <tooltip>COMBINING CYRILLIC THOUSAND MILLIONS SIGN</tooltip>
         </key>
         <key>
