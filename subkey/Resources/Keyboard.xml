@@ -1,5 +1,429 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <keyboard fontfamily="RomanCyrillic Std" fontsize="15">
+    <scheme name="Hist gramatyka" fontfamily="RomanCyrillic Std" fontsize="15">
+        <key>
+            <text>Є</text>
+            <tooltip>CYRILLIC CAPITAL LETTER UKRAINIAN IE</tooltip>
+        </key>
+        <key>
+            <text>Ѕ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER DZE</tooltip>
+        </key>
+        <key>
+            <text>Ꙁ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER ZEMLYA</tooltip>
+        </key>
+        <key>
+            <text>Ї</text>
+            <tooltip>CYRILLIC CAPITAL LETTER YI</tooltip>
+        </key>
+        <key>
+            <text>Ꙗ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER IOTIFIED A</tooltip>
+        </key>
+        <key>
+            <text>Ѥ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER IOTIFIED E</tooltip>
+        </key>
+        <key>
+            <text>Ѧ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER LITTLE YUS</tooltip>
+        </key>
+        <key>
+            <text>Ѩ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER IOTIFIED LITTLE YUS</tooltip>
+        </key>
+        <key>
+            <text>Ѫ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER BIG YUS</tooltip>
+        </key>
+        <key>
+            <text>Ѭ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER IOTIFIED BIG YUS</tooltip>
+        </key>
+        <key>
+            <text>Ѯ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER KSI</tooltip>
+        </key>
+        <key>
+            <text>Ѱ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER PSI</tooltip>
+        </key>
+        <key>
+            <text>Ѳ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER FITA</tooltip>
+        </key>
+        <key>
+            <text>Ѵ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER IZHITSA</tooltip>
+        </key>
+        <key>
+            <text>Ѹ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER UK</tooltip>
+        </key>
+        <key>
+            <text>Ꙋ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER MONOGRAPH UK</tooltip>
+        </key>
+        <key>
+            <text>Ѡ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER OMEGA</tooltip>
+        </key>
+        <key>
+            <text>Ѿ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER OT</tooltip>
+        </key>
+        <key>
+            <text>Ѽ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER OMEGA WITH TITLO</tooltip>
+        </key>
+        <key>
+            <text>Ꙍ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER BROAD OMEGA</tooltip>
+        </key>
+        <key>
+            <text>Ґ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER GHE WITH UPTURN</tooltip>
+        </key>
+        <key>
+            <text>Ꙏ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER NEUTRAL YER</tooltip>
+        </key>
+        <key>
+            <text>Ꙑ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER YERU WITH BACK YER</tooltip>
+        </key>
+        <key>
+            <text>Ꙣ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER SOFT DE</tooltip>
+        </key>
+        <key>
+            <text>Ꙥ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER SOFT EL</tooltip>
+        </key>
+        <key>
+            <text>Ꙧ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER SOFT EM</tooltip>
+        </key>
+        <key>
+            <text>Ј</text>
+            <tooltip>CYRILLIC CAPITAL LETTER JE</tooltip>
+        </key>
+        <key>
+            <text>Љ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER LJE</tooltip>
+        </key>
+        <key>
+            <text>Њ</text>
+            <tooltip>CYRILLIC CAPITAL LETTER NJE</tooltip>
+        </key>
+        <key>
+            <text>l̥</text>
+            <tooltip>Складаўтваральная літара L</tooltip>
+        </key>
+        <key>
+            <text>r̥</text>
+            <tooltip>Складаўтваральная літара R</tooltip>
+        </key>
+        <key>
+            <text>i̯</text>
+            <tooltip>Нескладовая літара І</tooltip>
+        </key>
+        <key>
+            <text>u̯</text>
+            <tooltip>Нескладовая літара U</tooltip>
+        </key>
+        <key>
+            <text>ä</text>
+            <tooltip></tooltip>
+        </key>
+        <key>
+            <text>ы̌</text>
+            <tooltip>Рэдукаваны галосны Ы̌</tooltip>
+        </key>
+        <key>
+            <text>и̌</text>
+            <tooltip>Рэдукаваны галосны И̌</tooltip>
+        </key>
+
+        <key>
+            <text>҂</text>
+            <tooltip>CYRILLIC THOUSANDS SIGN</tooltip>
+        </key>
+        <key>
+            <text>҃</text>
+            <title>◌҃</title>
+            <tooltip>COMBINING CYRILLIC TITLO</tooltip>
+        </key>
+        <key>
+            <text>҄</text>
+            <title>◌҄</title>
+            <tooltip>COMBINING CYRILLIC PALATALIZATION</tooltip>
+        </key>
+        <key>
+            <text>҅</text>
+            <title>◌҅</title>
+            <tooltip>COMBINING CYRILLIC DASIA PNEUMATA</tooltip>
+        </key>
+        <key>
+            <text>҆</text>
+            <title>◌҆</title>
+            <tooltip>COMBINING CYRILLIC PSILI PNEUMATA</tooltip>
+        </key>
+        <key>
+            <text>҇</text>
+            <title>◌҇</title>
+            <tooltip>COMBINING CYRILLIC POKRYTIE</tooltip>
+        </key>
+        <key>
+            <text>҈</text>
+            <title>◌҈</title>
+            <tooltip>COMBINING CYRILLIC HUNDRED THOUSANDS SIGN</tooltip>
+        </key>
+        <key>
+            <text>҉</text>
+            <title>◌҉</title>
+            <tooltip>COMBINING CYRILLIC MILLIONS SIGN</tooltip>
+        </key>
+        <key>
+            <text>꙯</text>
+            <title>◌꙯</title>
+            <tooltip>COMBINING CYRILLIC VZMET</tooltip>
+        </key>
+        <key>
+            <text>꙰</text>
+            <title>◌꙰</title>
+            <tooltip>COMBINING CYRILLIC TEN MILLIONS SIGN</tooltip>
+        </key>
+        <key>
+            <text>꙱</text>
+            <title>◌꙱</title>
+            <tooltip>COMBINING CYRILLIC HUNDRED MILLIONS SIGN</tooltip>
+        </key>
+        <key>
+            <text>꙲</text>
+            <title>◌꙲</title>
+            <tooltip>COMBINING CYRILLIC THOUSAND MILLIONS SIGN</tooltip>
+        </key>
+        <key>
+            <text>꙼</text>
+            <title>◌꙼</title>
+            <tooltip>COMBINING CYRILLIC KAVYKA</tooltip>
+        </key>
+        <key>
+            <text>꙽</text>
+            <title>◌꙽</title>
+            <tooltip>COMBINING CYRILLIC PAYEROK</tooltip>
+        </key>
+        <key>
+            <text>꙾</text>
+            <tooltip>CYRILLIC KAVYKA</tooltip>
+        </key>
+        <key>
+            <text>ꙿ</text>
+            <tooltip>CYRILLIC PAYEROK</tooltip>
+        </key>
+        <key>
+            <text>ⷠ</text>
+            <title>◌ⷠ</title>
+            <tooltip>COMBINING CYRILLIC LETTER BE</tooltip>
+        </key>
+        <key>
+            <text>ⷡ</text>
+            <title>◌ⷡ</title>
+            <tooltip>COMBINING CYRILLIC LETTER VE</tooltip>
+        </key>
+        <key>
+            <text>ⷢ</text>
+            <title>◌ⷢ</title>
+            <tooltip>COMBINING CYRILLIC LETTER GHE</tooltip>
+        </key>
+        <key>
+            <text>ⷣ</text>
+            <title>◌ⷣ</title>
+            <tooltip>COMBINING CYRILLIC LETTER DE</tooltip>
+        </key>
+        <key>
+            <text>ⷤ</text>
+            <title>◌ⷤ</title>
+            <tooltip>COMBINING CYRILLIC LETTER ZHE</tooltip>
+        </key>
+        <key>
+            <text>ⷥ</text>
+            <title>◌ⷥ</title>
+            <tooltip>COMBINING CYRILLIC LETTER ZE</tooltip>
+        </key>
+        <key>
+            <text>ⷦ</text>
+            <title>◌ⷦ</title>
+            <tooltip>COMBINING CYRILLIC LETTER KA</tooltip>
+        </key>
+        <key>
+            <text>ⷧ</text>
+            <title>◌ⷧ</title>
+            <tooltip>COMBINING CYRILLIC LETTER EL</tooltip>
+        </key>
+        <key>
+            <text>ⷨ</text>
+            <title>◌ⷨ</title>
+            <tooltip>COMBINING CYRILLIC LETTER EM</tooltip>
+        </key>
+        <key>
+            <text>ⷩ</text>
+            <title>◌ⷩ</title>
+            <tooltip>COMBINING CYRILLIC LETTER EN</tooltip>
+        </key>
+        <key>
+            <text>ⷪ</text>
+            <title>◌ⷪ</title>
+            <tooltip>COMBINING CYRILLIC LETTER O</tooltip>
+        </key>
+        <key>
+            <text>ⷫ</text>
+            <title>◌ⷫ</title>
+            <tooltip>COMBINING CYRILLIC LETTER PE</tooltip>
+        </key>
+        <key>
+            <text>ⷬ</text>
+            <title>◌ⷬ</title>
+            <tooltip>COMBINING CYRILLIC LETTER ER</tooltip>
+        </key>
+        <key>
+            <text>ⷭ</text>
+            <title>◌ⷭ</title>
+            <tooltip>COMBINING CYRILLIC LETTER ES</tooltip>
+        </key>
+        <key>
+            <text>ⷮ</text>
+            <title>◌ⷮ</title>
+            <tooltip>COMBINING CYRILLIC LETTER TE</tooltip>
+        </key>
+        <key>
+            <text>ⷯ</text>
+            <title>◌ⷯ</title>
+            <tooltip>COMBINING CYRILLIC LETTER HA</tooltip>
+        </key>
+        <key>
+            <text>ⷰ</text>
+            <title>◌ⷰ</title>
+            <tooltip>COMBINING CYRILLIC LETTER TSE</tooltip>
+        </key>
+        <key>
+            <text>ⷱ</text>
+            <title>◌ⷱ</title>
+            <tooltip>COMBINING CYRILLIC LETTER CHE</tooltip>
+        </key>
+        <key>
+            <text>ⷲ</text>
+            <title>◌ⷲ</title>
+            <tooltip>COMBINING CYRILLIC LETTER SHA</tooltip>
+        </key>
+        <key>
+            <text>ⷳ</text>
+            <title>◌ⷳ</title>
+            <tooltip>COMBINING CYRILLIC LETTER SHCHA</tooltip>
+        </key>
+        <key>
+            <text>ⷴ</text>
+            <title>◌ⷴ</title>
+            <tooltip>COMBINING CYRILLIC LETTER FITA</tooltip>
+        </key>
+        <key>
+            <text>ⷵ</text>
+            <title>◌ⷵ</title>
+            <tooltip>COMBINING CYRILLIC LETTER ES-TE</tooltip>
+        </key>
+        <key>
+            <text>ⷶ</text>
+            <title>◌ⷶ</title>
+            <tooltip>COMBINING CYRILLIC LETTER A</tooltip>
+        </key>
+        <key>
+            <text>ⷷ</text>
+            <title>◌ⷷ</title>
+            <tooltip>COMBINING CYRILLIC LETTER IE</tooltip>
+        </key>
+        <key>
+            <text>ⷸ</text>
+            <title>◌ⷸ</title>
+            <tooltip>COMBINING CYRILLIC LETTER DJERV</tooltip>
+        </key>
+        <key>
+            <text>ⷹ</text>
+            <title>◌ⷹ</title>
+            <tooltip>COMBINING CYRILLIC LETTER MONOGRAPH UK</tooltip>
+        </key>
+        <key>
+            <text>ⷺ</text>
+            <title>◌ⷺ</title>
+            <tooltip>COMBINING CYRILLIC LETTER YAT</tooltip>
+        </key>
+        <key>
+            <text>ⷻ</text>
+            <title>◌ⷻ</title>
+            <tooltip>COMBINING CYRILLIC LETTER YU</tooltip>
+        </key>
+        <key>
+            <text>ⷼ</text>
+            <title>◌ⷼ</title>
+            <tooltip>COMBINING CYRILLIC LETTER IOTIFIED A</tooltip>
+        </key>
+        <key>
+            <text>ⷽ</text>
+            <title>◌ⷽ</title>
+            <tooltip>COMBINING CYRILLIC LETTER LITTLE YUS</tooltip>
+        </key>
+        <key>
+            <text>ⷾ</text>
+            <title>◌ⷾ</title>
+            <tooltip>COMBINING CYRILLIC LETTER BIG YUS</tooltip>
+        </key>
+        <key>
+            <text>ⷿ</text>
+            <title>◌ⷿ</title>
+            <tooltip>COMBINING CYRILLIC LETTER IOTIFIED BIG YUS</tooltip>
+        </key>
+        <key>
+            <text>ꙴ</text>
+            <title>◌ꙴ</title>
+            <tooltip>COMBINING CYRILLIC LETTER UKRAINIAN IE</tooltip>
+        </key>
+        <key>
+            <text>ꙵ</text>
+            <title>◌ꙵ</title>
+            <tooltip>COMBINING CYRILLIC LETTER I</tooltip>
+        </key>
+        <key>
+            <text>ꙶ</text>
+            <title>◌ꙶ</title>
+            <tooltip>COMBINING CYRILLIC LETTER YI</tooltip>
+        </key>
+        <key>
+            <text>ꙷ</text>
+            <title>◌ꙷ</title>
+            <tooltip>COMBINING CYRILLIC LETTER U</tooltip>
+        </key>
+        <key>
+            <text>ꙸ</text>
+            <title>◌ꙸ</title>
+            <tooltip>COMBINING CYRILLIC LETTER HARD SIGN</tooltip>
+        </key>
+        <key>
+            <text>ꙹ</text>
+            <title>◌ꙹ</title>
+            <tooltip>COMBINING CYRILLIC LETTER YERU</tooltip>
+        </key>
+        <key>
+            <text>ꙺ</text>
+            <title>◌ꙺ</title>
+            <tooltip>COMBINING CYRILLIC LETTER SOFT SIGN</tooltip>
+        </key>
+        <key>
+            <text>ꙻ</text>
+            <title>◌ꙻ</title>
+            <tooltip>COMBINING CYRILLIC LETTER OMEGA</tooltip>
+        </key>
+    </scheme>
     <scheme name="Latin_1_Sup">
         <key>
             <text></text>
