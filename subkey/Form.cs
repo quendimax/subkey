@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -15,23 +16,18 @@ using subkey.Properties;
 
 namespace subkey
 {
-    public class SubkeyButton : Button
-    {
-        public string RealText { get; set; }
-    }
-
     public partial class Form : System.Windows.Forms.Form
     {
         [DllImport("gdi32.dll", ExactSpelling = true)]
         private static extern IntPtr AddFontMemResourceEx(byte[] pbFont, int cbFont, IntPtr pdv, out uint pcFonts);
 
-        private const float DefaultFontSize = 14f;
-        private const string DefaultFontFamily = "RomanCyrillic Std";
+        public const float DefaultFontSize = 14f;
+        public const string DefaultFontFamily = "RomanCyrillic Std";
 
         private PrivateFontCollection fontCollection = new PrivateFontCollection();
         private Dictionary<string, Font> fontMap = new Dictionary<string, Font>();
         private Dictionary<string, FontFamily> fontFamilyMap = new Dictionary<string, FontFamily>();
-        private Dictionary<string, List<SubkeyButton>> schemes = new Dictionary<string, List<SubkeyButton>>();
+        private Dictionary<string, List<Button>> schemes = new Dictionary<string, List<Button>>();
         private Dictionary<string, int> schemeOffsetIndeces = new Dictionary<string, int>();
 
         public Form()
@@ -40,27 +36,36 @@ namespace subkey
             LoadFonts();
             LoadKeyboardSchemes();
             InitializeMenu();
-            SubkeyButton[] buttons = new SubkeyButton[3];
         }
 
-        private SubkeyButton BuildButton(string text, string title, string toolTipText, string fontFamily, float fontSize)
+        private Button BuildButton(SchemeKey key)
         {
-            var button = new SubkeyButton();
-            button.Text = title;
-            button.RealText = text;
+            var button = new Button();
+            button.Text = key.Title;
+            button.Tag = key;
             button.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
-            button.Font = getFont(fontFamily, fontSize);
+            button.Font = getFont(key.FontFamily, key.FontSize);
             button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             button.Click += Button_Click;
             var toolTip = new ToolTip();
-            toolTip.SetToolTip(button, toolTipText);
+            toolTip.SetToolTip(button, key.Tooltip);
+            var contextMenu = new ContextMenu();
+            contextMenu.MenuItems.Add("Add to Favorites");
+            contextMenu.MenuItems[0].Click += new EventHandler(Button_ContextMenuClick);
+            button.ContextMenu = contextMenu;
             return button;
+        }
+
+        private void Button_ContextMenuClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("hello");
         }
 
         private void Button_Click(object sender, EventArgs e)
         {
-            SubkeyButton button = (SubkeyButton)sender;
-            string c = button.RealText;
+            var button = (Button)sender;
+            var key = (SchemeKey)button.Tag;
+            string c = key.Text;
             bool isBig = Control.IsKeyLocked(Keys.CapsLock) && !(Control.ModifierKeys == Keys.Shift) ||
                         !Control.IsKeyLocked(Keys.CapsLock) && Control.ModifierKeys == Keys.Shift;
             if (!isBig) c = c.ToLower();
@@ -71,9 +76,19 @@ namespace subkey
         private void LoadKeyboardSchemes()
         {
             XmlDocument xml = new XmlDocument();
-            xml.LoadXml(Resources.Keyboard);
+            string customKeyboardFile = Path.Combine(Directory.GetCurrentDirectory(), "keyboard.xml");
+            if (File.Exists(customKeyboardFile))
+                xml.Load(customKeyboardFile);
+            else
+                xml.LoadXml(Resources.Keyboard);
             foreach (XmlNode scheme in xml.DocumentElement.ChildNodes)
             {
+                string schemeFontFamily = DefaultFontFamily;
+                if (scheme.Attributes["fontfamily"] != null)
+                    schemeFontFamily = scheme.Attributes["fontfamily"].Value;
+                float schemeFontSize = DefaultFontSize;
+                if (scheme.Attributes["fontsize"] != null)
+                    schemeFontSize = (float)Double.Parse(scheme.Attributes["fontsize"].Value);
                 string schemeName = scheme.Attributes["name"].Value;
                 if (schemes.ContainsKey(schemeName))
                 {
@@ -81,15 +96,15 @@ namespace subkey
                                     "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     continue;
                 }
-                schemes[schemeName] = new List<SubkeyButton>();
+                schemes[schemeName] = new List<Button>();
                 schemeOffsetIndeces[schemeName] = 0;
                 foreach (XmlNode key in scheme.ChildNodes)
                 {
                     string text = "";
                     string title = "";
                     string tooltip = "";
-                    string fontFamily = DefaultFontFamily;
-                    float fontSize = DefaultFontSize;
+                    string fontFamily = schemeFontFamily;
+                    float fontSize = schemeFontSize;
                     XmlNode node = key.FirstChild;
                     do
                     {
@@ -113,9 +128,8 @@ namespace subkey
                         }
                         node = node.NextSibling;
                     } while (node != null);
-                    int size = text.Length;
-                    size = title.Length;
-                    schemes[schemeName].Add(BuildButton(text, title, tooltip, fontFamily, fontSize));
+                    var schemeKey = new SchemeKey(text, title, tooltip, fontFamily, fontSize);
+                    schemes[schemeName].Add(BuildButton(schemeKey));
                 }
             }
         }
@@ -156,7 +170,7 @@ namespace subkey
             tableLayout.SuspendLayout();
             tableLayout.Controls.Clear();
             tableLayout.Controls.AddRange(scheme.GetRange(offset, count).ToArray());
-            tableLayout.ResumeLayout();
+            tableLayout.ResumeLayout(true);
 
             if (offset != 0)
                 backButton.Enabled = true;
@@ -206,7 +220,7 @@ namespace subkey
             get
             {
                 CreateParams param = base.CreateParams;
-                //param.ExStyle |= 0x08000000;
+                param.ExStyle |= 0x08000000;
                 return param;
             }
         }
