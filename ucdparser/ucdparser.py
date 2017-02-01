@@ -63,12 +63,13 @@ class Handler(ContentHandler):
             self._fd.write("\t\t</key>\n")
 
     def check_group(self):
-        if self._group and self._group in {"Latin_1_Sup", "Latin_Ext_A", "Latin_Ext_B", "Latin_Ext_D", "Latin_Ext_E",
-                                           "Latin_Ext_Additional", "Modifier_Letters", "IPA_Ext", "Phonetic_Ext",
-                                           "Phonetic_Ext_Sup", "Diacriticals", "Diacriticals_Ext", "Diacriticals_Sup",
-                                           "Cyrillic", "Cyrillic_Ext_A", "Cyrillic_Ext_B", "Cyrillic_Ext_C",
-                                           "Cyrillic_Sup", "Geometric_Shapes", "Glagolitic", "Latin_Ext_C",
-                                           "Glagolitic_Sup", "Runic", "Emoticons"}:
+        groups_for_processing = {"Latin_1_Sup", "Latin_Ext_A", "Latin_Ext_B", "Latin_Ext_D", "Latin_Ext_E",
+                                 "Latin_Ext_Additional", "Modifier_Letters", "IPA_Ext", "Phonetic_Ext",
+                                 "Phonetic_Ext_Sup", "Diacriticals", "Diacriticals_Ext", "Diacriticals_Sup",
+                                 "Cyrillic", "Cyrillic_Ext_A", "Cyrillic_Ext_B", "Cyrillic_Ext_C",
+                                 "Cyrillic_Sup", "Geometric_Shapes", "Glagolitic", "Latin_Ext_C",
+                                 "Glagolitic_Sup", "Runic", "Emoticons"}
+        if self._group and self._group in groups_for_processing:
             return True
         return False
 
@@ -77,15 +78,15 @@ if __name__ == '__main__':
     handler = Handler('Keyboard.xml')
     ucd_zip_file = 'ucd.all.grouped.zip'
     if not os.path.exists(ucd_zip_file):
-        print('Downloading {}...'.format(ucd_zip_file), flush=True)
+        print('Downloading {}'.format(ucd_zip_file), flush=True)
         urllib.request.urlretrieve("http://unicode.org/Public/9.0.0/ucdxml/{}".format(ucd_zip_file), ucd_zip_file)
-        print(' Done', flush=True)
+        print('Done', flush=True)
     ucd_file = 'ucd.all.grouped.xml'
     if not os.path.exists(ucd_file):
-        print('Extracting {} from {}...'.format(ucd_file, ucd_zip_file), flush=True)
+        print('Extracting {} from {}'.format(ucd_file, ucd_zip_file), flush=True)
         with ZipFile(ucd_zip_file) as zip_fd:
             zip_fd.extract(ucd_file)
-        print(' Done', flush=True)
-    print('Processing {}...'.format(ucd_file), flush=True)
+        print('Done', flush=True)
+    print('Processing {}'.format(ucd_file), flush=True)
     xml.sax.parse("ucd.all.grouped.xml", handler)
-    print(' Done', flush=True)
+    print('Done', flush=True)
