@@ -214,7 +214,7 @@ namespace subkey
                 AddFontMemResourceEx(fontData, fontData.Length, IntPtr.Zero, out dummy);
 
                 IntPtr buf = Marshal.AllocCoTaskMem(fontData.Length);
-                if (buf != null)
+                if (buf != IntPtr.Zero)
                 {
                     Marshal.Copy(fontData, 0, buf, fontData.Length);
                     fontCollection.AddMemoryFont(buf, fontData.Length);
@@ -231,7 +231,7 @@ namespace subkey
                 AddFontMemResourceEx(fontData, fontData.Length, IntPtr.Zero, out dummy);
 
                 IntPtr buf = Marshal.AllocCoTaskMem(fontData.Length);
-                if (buf != null)
+                if (buf != IntPtr.Zero)
                 {
                     Marshal.Copy(fontData, 0, buf, fontData.Length);
                     fontCollection.AddMemoryFont(buf, fontData.Length);
@@ -256,14 +256,8 @@ namespace subkey
 
         private void Form_Load(object sender, EventArgs e)
         {
-            if (Settings.Default.WindowLocation != null)
-            {
-                this.Location = Settings.Default.WindowLocation;
-            }
-            if (Settings.Default.WindowSize != null)
-            {
-                this.Size = Settings.Default.WindowSize;
-            }
+            this.Location = Settings.Default.WindowLocation;
+            this.Size = Settings.Default.WindowSize;
         }
 
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
