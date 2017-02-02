@@ -72,23 +72,19 @@ namespace subkey.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-        ///&lt;keyboard fontfamily=&quot;RomanCyrillic Std&quot; fontsize=&quot;15&quot;&gt;
-        ///    &lt;scheme name=&quot;Latin_1_Sup&quot;&gt;
+        ///&lt;keyboard fontfamily=&quot;RomanCyrillic Std&quot; fontsize=&quot;16&quot;&gt;
+        ///    &lt;scheme name=&quot;Hist gramatyka&quot; fontfamily=&quot;RomanCyrillic Std&quot; fontsize=&quot;16&quot;&gt;
         ///        &lt;key&gt;
-        ///            &lt;text&gt;&lt;/text&gt;
-        ///            &lt;tooltip&gt;&lt;/tooltip&gt;
+        ///            &lt;text&gt;Є&lt;/text&gt;
+        ///            &lt;tooltip&gt;CYRILLIC CAPITAL LETTER UKRAINIAN IE&lt;/tooltip&gt;
         ///        &lt;/key&gt;
         ///        &lt;key&gt;
-        ///            &lt;text&gt;&lt;/text&gt;
-        ///            &lt;tooltip&gt;&lt;/tooltip&gt;
+        ///            &lt;text&gt;Ѕ&lt;/text&gt;
+        ///            &lt;tooltip&gt;CYRILLIC CAPITAL LETTER DZE&lt;/tooltip&gt;
         ///        &lt;/key&gt;
         ///        &lt;key&gt;
-        ///            &lt;text&gt;&lt;/text&gt;
-        ///            &lt;tooltip&gt;BREAK PERMITTED HERE&lt;/tooltip&gt;
-        ///        &lt;/key&gt;
-        ///        &lt;key&gt;
-        ///            &lt;text&gt;&lt;/text&gt;
-        ///            &lt;tooltip&gt;NO BREAK HERE&lt;/toolti [rest of string was truncated]&quot;;.
+        ///            &lt;text&gt;Ꙁ&lt;/text&gt;
+        ///            &lt;tooltip&gt;CYRILLIC CAPITAL LETTE [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Keyboard {
             get {

@@ -5,10 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using System.Xml;
@@ -137,7 +135,9 @@ namespace subkey
 
         private void InitializeMenu()
         {
-            schemeComboBox.Items.AddRange(schemes.Keys.ToArray());
+            string[] keys = new string[schemes.Keys.Count];
+            schemes.Keys.CopyTo(keys, 0);
+            schemeComboBox.Items.AddRange(keys);
             if (Settings.Default.SchemeIndex < schemeComboBox.Items.Count)
             {
                 schemeComboBox.SelectedIndex = Settings.Default.SchemeIndex;
