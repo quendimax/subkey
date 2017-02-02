@@ -427,6 +427,16 @@
             <title>◌ꙻ</title>
             <tooltip>COMBINING CYRILLIC LETTER OMEGA</tooltip>
         </key>
+        <key>
+            <text>̀</text>
+            <title>◌̀</title>
+            <tooltip>COMBINING GRAVE ACCENT</tooltip>
+        </key>
+        <key>
+            <text>́</text>
+            <title>◌́</title>
+            <tooltip>COMBINING ACUTE ACCENT</tooltip>
+        </key>
     </scheme>
     <scheme name="Latin_1_Sup">
         <key>

@@ -107,6 +107,7 @@
             this.ClientSize = new System.Drawing.Size(691, 267);
             this.Controls.Add(this.tableLayout);
             this.Controls.Add(this.menuStrip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip;
             this.MinimumSize = new System.Drawing.Size(240, 120);
             this.Name = "Form";
